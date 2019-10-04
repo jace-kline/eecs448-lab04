@@ -7,30 +7,51 @@
 
     <body>
         <h1>Multiplication Table</h1>
-        
 
-            <?php
+<?php
 
-                $size = 100;
+$size = 100;
 
-                function printRow($r) {
-                    echo "<tr>";
-                    for($i=1; $i <= $size ; $i++) {
-                        echo "<td>" . ($r * $i) . "</td>";
-                    }
-                    echo "</tr>";
-                }
+function printRow1($s) {
+  echo "<tr>";
+  echo "<td></td>";
+  for($i = 1; $i <= $s ; $i++) {
+    echo "<td>" . $i . "</td>";
+  }
+  echo "</tr>";
+}
 
-                function printMultTable() {
-                    echo "<table style="width:100%">";
-                        for($j=1, $j <= size; $j=++) {
-                            printRow($j);
-                        }
-                    echo "</table>";
-                }
+function printRow($r, $s) {
+    echo "<tr>";
+    for($i = 1; $i <= $s ; $i++) {
+      $mult = $r * $i;
+      echo "<td>" . $mult . "</td>";
+    }
+    echo "</tr>";
+}
 
-                printMultTable();
-            ?>
+
+function printMultTable($s) {
+    echo "<table style='width:100%'>";
+
+    printRow1($s);
+
+    for($j = 1; $j <= $s; $j++) {
+        printRow($j, $s);
+    }
+    echo "</table>";
+}
+
+/*
+echo "<table style='width:100%'>";
+echo "<tr>" . "<td>" . "hello" . "</td>" . "<td>" . "hello" . "</td>" . "</tr>";
+echo "</table>";
+*/
+
+printMultTable($size);
+
+?>
+
 
     </body>
 </html>
