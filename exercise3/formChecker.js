@@ -18,11 +18,6 @@ function validate() {
     let shipOptEls = document.getElementsByName("shipCost");
     let shipCost = getShipOpt(shipOptEls) ? parseInt(getShipOpt(shipOptEls)) : null;
 
-    console.log(emailIn);
-    console.log(passIn);
-    console.log(qtys);
-    console.log(shipCost);
-
     let errBoolList = [
         isValidEmail(emailIn),
         isValidPass(passIn),
@@ -37,9 +32,11 @@ function validate() {
 
     if(errCodes.length > 0) {
         displayErrors(errCodes);
+        return false;
     }
     else {
         // Send the action request to PHP???
+        return true;
     }
 
     return false;
@@ -79,5 +76,5 @@ function isGreaterThanQty0(qtyList) {
 }
 
 function choseShipOption(val) {
-    return (!val ? false : true);
+    return (!(typeof(val) === "number") ? false : true);
 }
