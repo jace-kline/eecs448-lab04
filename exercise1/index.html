@@ -23,6 +23,7 @@ function printRow1($s) {
 
 function printRow($r, $s) {
     echo "<tr>";
+    echo "<td>" . $r . "</td>";
     for($i = 1; $i <= $s ; $i++) {
       $mult = $r * $i;
       echo "<td>" . $mult . "</td>";
